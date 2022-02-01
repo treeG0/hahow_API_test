@@ -15,6 +15,7 @@ Created:    2/1/2022
 
 from support.swapi_request import SwapiRequest
 from integration.dut_base import SUTBase
+from parameterized import parameterized
 import logging
 
 
@@ -25,15 +26,20 @@ class APITest(SUTBase):
         cls.swapi = SwapiRequest()
         super().setUpClass()
 
-    def test_species_amount_in_film(self):
+    @parameterized.expand([
+        ["episode 1", 1, 20],
+        ["episode 4", 4, 5],
+        ["episode 6", 6, 9],
+    ])
+    def test_species_amount_in_film(self, episode, episode_num, expected):
         """
-        Test how many different species appears in film episode 6
+        Test how many different species appears in film
         """
         for film in self.swapi.get_all_films():
-            if film['episode_id'] == 6:
+            if film['episode_id'] == episode_num:
                 logging.info(
-                    str(len(film['species'])) + ' different species appears in film episode 3')
-                self.assertEqual(len(film['species']), 9)
+                    str(len(film['species'])) + ' different species appears in film ' + episode)
+                self.assertEqual(len(film['species']), expected)
 
     def test_get_all_films_name(self):
         """

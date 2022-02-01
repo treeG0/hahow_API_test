@@ -14,11 +14,15 @@ Created:    2/1/2022
 import json
 import requests
 import configparser
+import os
+
 
 class SwapiRequest:
 
     def __init__(self):
-        pass
+        config = configparser.ConfigParser()
+        config.read(os.path.dirname(__file__)+"/../config.ini")
+        self.baseurl = config['ENV']['BASEURL']
 
     def get_response_json(self, req):
         """

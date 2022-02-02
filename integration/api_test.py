@@ -14,7 +14,7 @@ Created:    2/1/2022
 """
 
 from support.swapi_request import SwapiRequest
-from integration.dut_base import SUTBase
+from integration.sut_base import SUTBase
 from parameterized import parameterized
 import logging
 

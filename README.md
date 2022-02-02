@@ -31,11 +31,11 @@ python3 -m unittest -v unit_test/test_swapi_request.py
 ```
 hahow_project
 |
-|-----integration # 根據需求的測試用例
+|-----integration # 根據需求的測試用例，藉由support裡提供的方法獲取資料
 |
-|-----support     # 處理API request
+|-----support     # 處理API request，主要負責控制API獲取response的內容
 |
-|-----unit_test   # support funtions的unit test
+|-----unit_test   # support的unit test
 |
-|-----config.ini  # 環境config設置
+|-----config.ini  # 環境設置
 ```

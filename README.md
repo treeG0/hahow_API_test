@@ -16,7 +16,7 @@ Python 3.4.1
 ```
 pip install configparser mock requests
 ```
-clone treeG0/hahow_project 至本機後，在專案根目錄底下執行下面命令
+clone repository至本機後，在專案根目錄底下執行下面命令
 ```
 # 驗證三個題目
 python -m unittest -v integration/api_test.py

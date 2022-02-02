@@ -35,5 +35,7 @@ hahow_project
 |
 |-----support     # 處理API request
 |
-|-----unit_test   # The unit test for the support funtions
+|-----unit_test   # support funtions的unit test
+|
+|-----config.ini  # 環境config設置
 ```
